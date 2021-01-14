@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
 import "../App.css";
 
-const Search = () => {
-  let [query, setQuery] = useState("");
-
+const Search = ({ changeQuery }) => {
+  let [queryWord, setQueryWord] = useState("");
   let handleChange = (e) => {
     let value = e.target.value;
-    console.log(e.target.value);
-    setQuery(value);
-    console.log(value);
+    setQueryWord(value);
   };
 
   let handleSubmit = (e) => {
     e.preventDefault();
-    console.log(query);
-    return query;
+    changeQuery(queryWord);
   };
 
   return (
@@ -26,7 +22,7 @@ const Search = () => {
           className="queryField"
           id="queryField"
           name="queryField"
-          value={query}
+          value={queryWord}
           onChange={handleChange}
         ></input>
         <button type="submit" className="bttn">

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Dishes from "./views/Dishes";
 import Search from "./components/Search";
+import DishesTest from "./views/DishesTest";
 
 function App() {
   // Define State Variable
@@ -12,31 +13,32 @@ function App() {
   //Here GET all the dishes (API call) - (UseEffect)
 
   //Here GET dishes that match the search (query)
-  let [search, setSearch] = useState("");
-  useEffect(() => {});
+  // let [search, setSearch] = useState("");
+  let [query, setQuery] = useState("");
 
-  //Here GET dishes from a specific origin
   useEffect(() => {
     const baseURL =
-      "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.origin[match]=";
+      "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&query=";
 
     axios
-      .get(baseURL + origin)
+      .get(baseURL + query)
       .then((res) => {
-        const fetchedDishes = res.data.items;
-        setDishes(fetchedDishes);
+        const result = res.data.items;
+        setDishes(result);
+        console.log(query);
+        console.log(result);
       })
       .catch((err) => console.error(err));
-  }, [origin]);
+  }, [query]);
 
-  // setOrigin("Turkey")
-  console.log(dishes);
+  //Here GET dishes from a specific origin
 
   return (
     <div>
-      <Search />
-      {/* <Nav changeOrigin={(origin) => setOrigin(origin)} /> */}
+      <Search changeQuery={(query) => setQuery(query)} />
+
       <Dishes dishesCollection={dishes} />
+      <DishesTest dishesCollection={dishes} />
     </div>
   );
 }
