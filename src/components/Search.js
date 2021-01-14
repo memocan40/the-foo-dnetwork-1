@@ -11,10 +11,16 @@ const Search = () => {
     console.log(value);
   };
 
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(query);
+    return query;
+  };
+
   return (
     <div>
       Here you can search
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           className="queryField"
