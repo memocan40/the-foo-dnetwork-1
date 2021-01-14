@@ -1,11 +1,15 @@
-import Dish from "../components/Dish";
+import DishTest from "../components/DishTest";
 
 export default function DishesTest({ dishesCollection }) {
   return (
     <div className="collection">
       {dishesCollection.map((iteration, index) => (
         <div>
-          <Dish key={index} name={iteration.fields.dishName} />
+          <DishTest
+            key={index}
+            name={iteration.fields.dishName}
+            pic={iteration.fields.image}
+          />
         </div>
       ))}
     </div>
