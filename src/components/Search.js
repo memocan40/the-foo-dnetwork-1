@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../App.css";
 
 const Search = ({ changeQuery }) => {
@@ -24,7 +24,7 @@ const Search = ({ changeQuery }) => {
           name="queryField"
           value={queryWord}
           onChange={handleChange}
-        ></input>
+        />
         <button type="submit" className="bttn">
           Search
         </button>

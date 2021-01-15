@@ -1,11 +1,20 @@
-const Origin = () => {
+
+
+const Origin = ({changeOrigin, origins}) => {
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        console.log(e);
+        changeOrigin(e.target.innerText)
+    }
 
     return(
         <div className="origins">
+        <h2>Dishes from:</h2>
             <ul>
-                <li>Argentina</li>
-                <li>Turkey</li>
-                <li>Mexico</li>
+                {origins && origins.map((origin, index) => {
+                    return<li key={index} ><a href="https://www.google.com" onClick={handleClick}>{origin}</a></li>
+                })}
             </ul>
         </div>  
     )
