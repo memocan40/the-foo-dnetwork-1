@@ -11,6 +11,7 @@ function App() {
   let [query, setQuery] = useState("");
   let [origins, setOrigins] = useState([]);
   
+
   //Here GET dishes that match the search (query)
   useEffect(() => {
     const baseURL =
@@ -36,16 +37,18 @@ function App() {
     })
     .catch((err) => console.error(err)) 
   }, [origin])
-  
-  //Here GET all the dishes (API call) - (UseEffect)
 
-  useEffect(()=>{
-     axios.get("https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish")
-       .then((response)=>{
-         setDishes(response.data.items);
-       })
-       .catch(err => console.error(err))
-   },[])
+  //Here GET all the dishes (API call) - (UseEffect)
+  useEffect(() => {
+    axios
+      .get(
+        "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&order=fields.dishName"
+      )
+      .then((response) => {
+        setDishes(response.data.items);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
    if(dishes) {
      dishes.map((dish) => {
@@ -55,7 +58,7 @@ function App() {
    }
   
   return (
-    <div>
+    <div className="wrapper">
       <Nav 
         changeQuery={(query) => setQuery(query)} 
         changeOrigin={(origin) => {setOrigin(origin)}} 
