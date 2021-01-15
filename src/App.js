@@ -14,9 +14,9 @@ function App() {
  useEffect(()=>{
     axios.get("https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish")
       .then((response)=>{
-      setDishes(response.data.items);
-    })
-    },[])
+      setDishes(response.data.items);})
+      .catch(err => console.error(err))
+  },[])
 
 
 
@@ -51,6 +51,7 @@ function App() {
 
   return (
     <div>
+      <Nav changeQuery={(query) => setQuery(query)} changeOrigin={(origin) => {setOrigin(origin)}}  />
       {dishes ?  <Dishes dishesCollection={dishes} /> : null}
     </div>
   );
