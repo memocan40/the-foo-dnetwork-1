@@ -1,4 +1,4 @@
-import {useState} from 'react';
+
 
 const Origin = ({changeOrigin, origins}) => {
 
@@ -13,7 +13,7 @@ const Origin = ({changeOrigin, origins}) => {
         <h2>Dishes from:</h2>
             <ul>
                 {origins && origins.map((origin, index) => {
-                    return<li><a href="" key={index} onClick={handleClick}>{origin}</a></li>
+                    return<li key={index} ><a href="https://www.google.com" onClick={handleClick}>{origin}</a></li>
                 })}
             </ul>
         </div>  
