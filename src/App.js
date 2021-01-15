@@ -9,16 +9,6 @@ function App() {
   let [dishes, setDishes] = useState();
   let [origin, setOrigin] = useState("Argentina");
   let [query, setQuery] = useState("");
-  
-  //Here GET all the dishes (API call) - (UseEffect)
- useEffect(()=>{
-    axios.get("https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish")
-      .then((response)=>{
-      setDishes(response.data.items);})
-      .catch(err => console.error(err))
-  },[])
-
-
 
   //Here GET dishes that match the search (query)
   useEffect(() => {
@@ -39,20 +29,38 @@ function App() {
   //Here GET dishes from a specific origin
 
   useEffect(() => {
-    const baseURL = "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.origin[match]="
-    axios.get(baseURL + origin)
-    .then((res) => {
-      const fetchedDishes = res.data.items;
-      setDishes(fetchedDishes);
-    })
-    .catch((err) => console.error(err)) 
-  }, [origin])
-  
+    const baseURL =
+      "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.origin[match]=";
+    axios
+      .get(baseURL + origin)
+      .then((res) => {
+        const fetchedDishes = res.data.items;
+        setDishes(fetchedDishes);
+      })
+      .catch((err) => console.error(err));
+  }, [origin]);
+
+  //Here GET all the dishes (API call) - (UseEffect)
+  useEffect(() => {
+    axios
+      .get(
+        "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&order=fields.dishName"
+      )
+      .then((response) => {
+        setDishes(response.data.items);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
-    <div>
-      <Nav changeQuery={(query) => setQuery(query)} changeOrigin={(origin) => {setOrigin(origin)}}  />
-      {dishes ?  <Dishes dishesCollection={dishes} /> : null}
+    <div className="wrapper">
+      <Nav
+        changeQuery={(query) => setQuery(query)}
+        changeOrigin={(origin) => {
+          setOrigin(origin);
+        }}
+      />
+      {dishes ? <Dishes dishesCollection={dishes} /> : null}
     </div>
   );
 }
