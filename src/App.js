@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Dishes from "./views/Dishes";
 import Search from "./components/Search";
-import DishesTest from "./views/DishesTest";
 
 function App() {
   // Define State Variable
@@ -38,7 +37,6 @@ function App() {
       <Search changeQuery={(query) => setQuery(query)} />
 
       <Dishes dishesCollection={dishes} />
-      <DishesTest dishesCollection={dishes} />
     </div>
   );
 }
