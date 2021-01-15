@@ -1,3 +1,4 @@
+
 export default function Dish({ name, pic }) {
   console.log(pic);
 
@@ -9,3 +10,4 @@ export default function Dish({ name, pic }) {
     </div>
   );
 }
+
