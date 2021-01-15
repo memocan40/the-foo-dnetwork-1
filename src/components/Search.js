@@ -24,7 +24,7 @@ const Search = ({ changeQuery }) => {
           name="queryField"
           value={queryWord}
           onChange={handleChange}
-        ></input>
+        />
         <button type="submit" className="bttn">
           Search
         </button>

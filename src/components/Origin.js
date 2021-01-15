@@ -2,10 +2,11 @@ const Origin = () => {
 
     return(
         <div className="origins">
+        <h2>Dishes from:</h2>
             <ul>
-                <li>Argentina</li>
-                <li>Turkey</li>
-                <li>Mexico</li>
+                <li><a href="">Argentina</a></li>
+                <li><a href="">Turkey</a></li>
+                <li><a href="">Mexico</a></li>
             </ul>
         </div>  
     )
