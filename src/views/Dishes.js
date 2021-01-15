@@ -1,9 +1,8 @@
 import Dish from "../components/Dish";
 
+
 export default function Dishes({dishesCollection}) {
-  // const filteredDishes = dishes.map((dish) => {
-  //   console.log(dish);
-  // })
+ 
 
   return (
     <div className="collection">
@@ -13,6 +12,7 @@ export default function Dishes({dishesCollection}) {
             name={dish.fields.dishName}
           />  
       ))}
+
     </div>
   );
 }
