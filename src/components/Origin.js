@@ -1,12 +1,20 @@
-const Origin = () => {
+import {useState} from 'react';
+
+const Origin = ({changeOrigin, origins}) => {
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        console.log(e);
+        changeOrigin(e.target.innerText)
+    }
 
     return(
         <div className="origins">
         <h2>Dishes from:</h2>
             <ul>
-                <li><a href="">Argentina</a></li>
-                <li><a href="">Turkey</a></li>
-                <li><a href="">Mexico</a></li>
+                {origins && origins.map((origin, index) => {
+                    return<li><a href="" key={index} onClick={handleClick}>{origin}</a></li>
+                })}
             </ul>
         </div>  
     )
