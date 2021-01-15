@@ -1,10 +1,11 @@
 import Dish from "../components/Dish";
-import Call from "../components/Alldishes"
-export default function Dishes() {
+export default function Dishes({dishesCollection}) {
   return (
     <div>
-      <Dish name="tamal" />
-      <Call />
+    {dishesCollection.map((iteration,index)=>{return(<div><Dish name={iteration.fields.dishName}/></div>)})}
+      
+      
+      
     </div>
   );
 }
