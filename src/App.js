@@ -8,26 +8,38 @@ function App() {
   // Define State Variable
   let [dishes, setDishes] = useState();
   let [origin, setOrigin] = useState("Argentina");
-
-
+  let [query, setQuery] = useState("");
+  
   //Here GET all the dishes (API call) - (UseEffect)
  useEffect(()=>{
-        axios.get("https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish").then((response)=>{setDishes(response.data.items);
-
-})
-
-
+    axios.get("https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish")
+      .then((response)=>{
+      setDishes(response.data.items);
+    })
     },[])
 
 
 
   //Here GET dishes that match the search (query)
+  useEffect(() => {
+    const baseURL =
+      "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&query=";
+
+    axios
+      .get(baseURL + query)
+      .then((res) => {
+        const result = res.data.items;
+        setDishes(result);
+        console.log(query);
+        console.log(result);
+      })
+      .catch((err) => console.error(err));
+  }, [query]);
 
   //Here GET dishes from a specific origin
+
   useEffect(() => {
     const baseURL = "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.origin[match]="
-
-
     axios.get(baseURL + origin)
     .then((res) => {
       const fetchedDishes = res.data.items;
