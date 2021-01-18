@@ -53,7 +53,7 @@ function App() {
        return null;
      })
    }
-  
+   axios.get("https://api.github.com/users/memocan40/repos").then((response)=>{console.log(response.data)})
   return (
     <div>
       <Nav 
