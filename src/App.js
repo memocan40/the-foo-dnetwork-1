@@ -10,8 +10,10 @@ function App() {
   let [origin, setOrigin] = useState("");
   let [query, setQuery] = useState("");
   let [origins, setOrigins] = useState([]);
+  let [image,setimage]   =useState([]);
   
-
+  
+  
   //Here GET dishes that match the search (query)
   useEffect(() => {
     const baseURL =
@@ -50,13 +52,17 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
+  useEffect(()=>{
+    axios.get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21").then((response)=>{response.data.map((iteration)=>{image.push(iteration.urls.regular)})})
+  },[])
+    console.log(image)
    if(dishes) {
      dishes.map((dish) => {
        if (!origins.includes(dish.fields.origin)) setOrigins([...origins, dish.fields.origin]);
        return null;
      })
    }
-   axios.get("https://api.github.com/users/memocan40/repos").then((response)=>{console.log(response.data)})
+   
   return (
     <div className="wrapper">
       <Nav 
