@@ -36,8 +36,18 @@
     transform: rotate(360deg);
   }
 }
-
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
 .collection {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  flex-grow: 0.7;
+}
+
+.dishItem {
   text-align: center;
 }
