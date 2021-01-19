@@ -1,53 +1,229 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+:root {
+  --color: rgba(255, 0, 0, 0.7);
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 1vmax;
+}
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .wrapper {
   display: flex;
-  justify-content: space-between;
-  padding: 30px;
+  justify-content: flex-end;
+  padding: 1%;
 }
+
+.sideBar {
+  position: fixed;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 40%;
+}
+
+li {
+  margin-top: 1%;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+  margin=top: 3%;
+}
+
+li a:hover {
+  color: var(--color);
+}
+
 .collection {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  flex-grow: 0.7;
+  column-count: 3;
+  max-width: 70%;
 }
 
 .dishItem {
   text-align: center;
+  break-inside: avoid;
+  position: relative;
+  margin-bottom: 3%;
+}
+
+.dishItem img {
+  width: 100%;
+}
+
+.dishItem div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  top: 0;
+  background-color: var(--color);
+  opacity: 0;
+  transition: all 50ms;
+}
+
+.dishItem div:hover {
+  opacity: 1;
+}
+
+.logo {
+  font-size: 3.5rem;
+}
+
+.origins {
+  border-top: solid 1px;
+  padding-top: 4%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#queryField {
+  min-width: 70%;
+  margin-right: 5%;
+  font-size: 1rem;
+}
+
+.bttn {
+  font-size: 0.8rem;
+}
+
+.bttn:hover {
+  background-color: var(--color);
 }
