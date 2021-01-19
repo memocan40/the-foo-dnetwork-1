@@ -10,7 +10,6 @@ const Origin = ({changeOrigin, origins, users, changeUser}) => {
     const handleUserClick = (user) => {
         changeUser(user.sys.id)
     }
-    console.log(users)
 
     return(
         <div className="origins">
