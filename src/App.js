@@ -63,11 +63,12 @@ function App() {
       .then((response) => {
         setDishes(response.data.items);
         setUsers(response.data.includes.Entry);
+        // console.log(response)
       })
       .catch((err) => console.error(err));
     }, []);
     
-    console.log(users)
+    // console.log(users)
    if(dishes) {
      dishes.map((dish) => {
        if (!origins.includes(dish.fields.origin)) setOrigins([...origins, dish.fields.origin]);

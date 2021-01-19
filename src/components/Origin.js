@@ -20,10 +20,10 @@ const Origin = ({changeOrigin, origins, users, changeUser}) => {
                     return<li key={index} ><a href="https://#" onClick={handleOriginClick}>{origin}</a></li>
                 }) : null}
             </ul>
-            <h2>From User:</h2>
+            <h2>Posted by:</h2>
             <ul>
                 {users ? users.map((user, index) => {
-                    return<li key={index} ><a href="https://#" onClick={(e) => {e.preventDefault() ; handleUserClick(user)}} user={user}>{user.fields.name} {user.fields.surname}</a></li>
+                    return<li key={index} ><a href="https://#" onClick={(e) => {e.preventDefault() ; handleUserClick(user)}} >{user.fields.name} {user.fields.surname}</a></li>
                 }) : null}
             </ul>
         </div>  
