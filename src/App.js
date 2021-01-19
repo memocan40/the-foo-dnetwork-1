@@ -6,11 +6,13 @@ import Nav from "./views/Nav";
 
 function App() {
   // Define State Variable
-  let [dishes, setDishes] = useState();
-  let [origin, setOrigin] = useState("");
-  let [query, setQuery] = useState("");
+  let [users, setUsers] = useState([]);
+  let [user, setUser] = useState("");
   let [origins, setOrigins] = useState([]);
-  
+  let [origin, setOrigin] = useState("");
+  let [dishes, setDishes] = useState();
+  let [query, setQuery] = useState("");
+  let [image,setimage]   =useState([]);
 
   //Here GET dishes that match the search (query)
   useEffect(() => {
@@ -26,6 +28,20 @@ function App() {
     .catch((err) => console.error(err));
   }, [query]);
   
+  //Here GET dished from a specific user
+  useEffect(() => {
+    const baseURL =
+    "https://cdn.contentful.com//spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.author.sys.contentType.sys.id=user&fields.author.sys.id=";
+    
+    axios
+    .get(baseURL + user)
+    .then((res) => {
+      const result = res.data.items;
+      setDishes(result);
+    })
+    .catch((err) => console.error(err));
+  }, [user]);
+
   //Here GET dishes from a specific origin
   
   useEffect(() => {
@@ -46,10 +62,12 @@ function App() {
       )
       .then((response) => {
         setDishes(response.data.items);
+        setUsers(response.data.includes.Entry);
       })
       .catch((err) => console.error(err));
-  }, []);
-
+    }, []);
+    
+    console.log(users)
    if(dishes) {
      dishes.map((dish) => {
        if (!origins.includes(dish.fields.origin)) setOrigins([...origins, dish.fields.origin]);
@@ -62,7 +80,9 @@ function App() {
       <Nav 
         changeQuery={(query) => setQuery(query)} 
         changeOrigin={(origin) => {setOrigin(origin)}} 
-        origins={origins}  
+        changeUser={(user) => setUser(user)}
+        origins={origins} 
+        users={users} 
       />
       {dishes ?  <Dishes dishesCollection={dishes} /> : null}
     </div>
