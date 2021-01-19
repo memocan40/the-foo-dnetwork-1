@@ -66,16 +66,20 @@ function App() {
         // console.log(response)
       })
       .catch((err) => console.error(err));
-    }, []);
+  }, []);
+
+  useEffect(()=>{
+    axios.get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21").then((response)=>{response.data.map((iteration)=>{image.push(iteration.urls.regular)})})
+  },[])
     
-    // console.log(users)
+
    if(dishes) {
      dishes.map((dish) => {
        if (!origins.includes(dish.fields.origin)) setOrigins([...origins, dish.fields.origin]);
        return null;
      })
    }
-  
+   
   return (
     <div className="wrapper">
       <Nav 
