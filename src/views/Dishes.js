@@ -4,11 +4,13 @@ export default function Dishes({ dishesCollection }) {
   return (
     <div className="collection">
       {dishesCollection.map((dish, index) => (
-          <Dish
-            key={index}
-            name={dish.fields.dishName}
-            pic={dish.fields.image}
-          />
+        <Dish
+          key={index}
+          name={dish.fields.dishName}
+          pic={dish.fields.image}
+          description={dish.fields.description}
+          origin={dish.fields.origin}
+        />
       ))}
     </div>
   );

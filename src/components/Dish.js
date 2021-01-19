@@ -1,10 +1,41 @@
-export default function Dish({ name, pic }) {
+import { useState } from "react";
+
+export default function Dish({ name, pic, description, origin }) {
+  const [clickClass, setClickClass] = useState("info");
+  const [readMore, setReadMore] = useState("Read More");
+
+  const handleInfo = (e) => {
+    // e.target.innerHTML === "Read More"
+    //   ? (e.target.innerHTML = "Read Less")
+    //   : (e.target.innerHTML = "Read More");
+
+    readMore === "Read More"
+      ? setReadMore("Read Less")
+      : setReadMore("Read More");
+
+    clickClass === "info"
+      ? setClickClass("info-selected")
+      : setClickClass("info");
+  };
   return (
-    <div className="dishItem">
-      <img src={pic}></img>
-      <div>
-        <p>{name}</p>
+    <>
+      <div className="dishItem">
+        <img src={pic}></img>
+        <div className="name">
+          <p>{name}</p>
+          <div className="extra">
+            <p> by User</p>
+            <p onClick={handleInfo}> {readMore} </p>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div className={clickClass}>
+        <h5>–{origin}</h5>
+        <h2>{name}</h2>
+        <h4>by User</h4>
+        <p>{description} </p>
+      </div>
+    </>
   );
 }
