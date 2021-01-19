@@ -2,6 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+:root {
+  --color: rgba(255, 0, 0, 0.7);
+}
 
 html,
 body,
@@ -128,26 +131,99 @@ table {
   border-spacing: 0;
 }
 
+html {
+  font-size: 1vmax;
+}
 .App {
 }
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
-  padding: 30px;
+  justify-content: flex-end;
+  padding: 1%;
 }
+
+.sideBar {
+  position: fixed;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 40%;
+}
+
+li {
+  margin-top: 1%;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+  margin=top: 3%;
+}
+
+li a:hover {
+  color: var(--color);
+}
+
 .collection {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-auto-rows: minmax(min-content, max-content);
-  flex-grow: 0.7;
+  column-count: 3;
+  max-width: 70%;
 }
 
 .dishItem {
   text-align: center;
+  break-inside: avoid;
+  position: relative;
+  margin-bottom: 3%;
 }
 
 .dishItem img {
   width: 100%;
+}
+
+.dishItem div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  top: 0;
+  background-color: var(--color);
+  opacity: 0;
+  transition: all 50ms;
+}
+
+.dishItem div:hover {
+  opacity: 1;
+}
+
+.logo {
+  font-size: 3.5rem;
+}
+
+.origins {
+  border-top: solid 1px;
+  padding-top: 4%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#queryField {
+  min-width: 70%;
+  margin-right: 5%;
+  font-size: 1rem;
+}
+
+.bttn {
+  font-size: 0.8rem;
+}
+
+.bttn:hover {
+  background-color: var(--color);
 }

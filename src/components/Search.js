@@ -15,7 +15,6 @@ const Search = ({ changeQuery }) => {
 
   return (
     <div>
-      Here you can search
       <form onSubmit={handleSubmit}>
         <input
           type="text"
