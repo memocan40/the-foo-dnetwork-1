@@ -6,10 +6,14 @@ import Nav from "./views/Nav";
 
 function App() {
   // Define State Variable
-  let [dishes, setDishes] = useState();
-  let [origin, setOrigin] = useState("");
-  let [query, setQuery] = useState("");
+  let [users, setUsers] = useState([]);
+  let [user, setUser] = useState("");
   let [origins, setOrigins] = useState([]);
+  let [origin, setOrigin] = useState("");
+  let [dishes, setDishes] = useState();
+  let [query, setQuery] = useState("");
+  let [image,setimage] = useState([]);
+
 
   //Here GET dishes that match the search (query)
   useEffect(() => {
@@ -24,6 +28,20 @@ function App() {
       })
       .catch((err) => console.error(err));
   }, [query]);
+  
+  //Here GET dished from a specific user
+  useEffect(() => {
+    const baseURL =
+    "https://cdn.contentful.com//spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.author.sys.contentType.sys.id=user&fields.author.sys.id=";
+    
+    axios
+    .get(baseURL + user)
+    .then((res) => {
+      const result = res.data.items;
+      setDishes(result);
+    })
+    .catch((err) => console.error(err));
+  }, [user]);
 
   //Here GET dishes from a specific origin
 
@@ -47,26 +65,32 @@ function App() {
       )
       .then((response) => {
         setDishes(response.data.items);
+        setUsers(response.data.includes.Entry);
+        // console.log(response)
       })
       .catch((err) => console.error(err));
   }, []);
 
-  if (dishes) {
-    dishes.map((dish) => {
-      if (!origins.includes(dish.fields.origin))
-        setOrigins([...origins, dish.fields.origin]);
-      return null;
-    });
-  }
+  useEffect(()=>{
+    axios.get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21").then((response)=>{response.data.map((iteration)=>{image.push(iteration.urls.regular)})})
+  },[])
+    
 
+   if(dishes) {
+     dishes.map((dish) => {
+       if (!origins.includes(dish.fields.origin)) setOrigins([...origins, dish.fields.origin]);
+       return null;
+     })
+   }
+   
   return (
     <div className="wrapper">
-      <Nav
-        changeQuery={(query) => setQuery(query)}
-        changeOrigin={(origin) => {
-          setOrigin(origin);
-        }}
-        origins={origins}
+      <Nav 
+        changeQuery={(query) => setQuery(query)} 
+        changeOrigin={(origin) => {setOrigin(origin)}} 
+        changeUser={(user) => setUser(user)}
+        origins={origins} 
+        users={users} 
       />
       {dishes ? <Dishes dishesCollection={dishes} /> : null}
     </div>
