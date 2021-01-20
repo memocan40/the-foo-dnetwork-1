@@ -7,10 +7,9 @@ const Origin = ({changeOrigin, origins, users, changeUser}) => {
         changeOrigin(e.target.innerText)
     }
 
-    const handleUserClick = (user) => {
-        changeUser(user.sys.id)
+    const handleUserClick = (userId) => {
+        changeUser(userId)
     }
-    console.log(users)
 
     return(
         <div className="origins">
@@ -23,7 +22,7 @@ const Origin = ({changeOrigin, origins, users, changeUser}) => {
             <h2>Posted by:</h2>
             <ul>
                 {users ? users.map((user, index) => {
-                    return<li key={index} ><a href="https://#" onClick={(e) => {e.preventDefault() ; handleUserClick(user)}} >{user.fields.name} {user.fields.surname}</a></li>
+                    return<li key={index} ><a href="https://#" onClick={(e) => {e.preventDefault() ; handleUserClick(user.sys.id)}} >{user.fields.name} {user.fields.surname}</a></li>
                 }) : null}
             </ul>
         </div>  
