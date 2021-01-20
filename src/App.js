@@ -32,7 +32,7 @@ function App() {
             user: {id: item.fields.author.sys.id},
             pictureId: item.fields.picture.sys.id
           }
-  
+
           response.data.includes.Entry.map((item) => {
             if (item.sys.id === dish.user.id) {
               dish.user.name = item.fields.name;
@@ -41,6 +41,15 @@ function App() {
             }
             return null;
           })
+
+          
+
+          response.data.includes.Asset.map((asset) => {
+            if(asset.sys.id === dish.pictureId) {
+              dish.pictureURL = asset.fields.file.url;
+            }
+          })
+
           tentativeDishes.push(dish);
           return null
         })
@@ -75,6 +84,12 @@ function App() {
               dish.user.username = item.fields.username;
             }
             return null;
+          })
+
+          response.data.includes.Asset.map((asset) => {
+            if(asset.sys.id === dish.pictureId) {
+              dish.pictureURL = asset.fields.file.url;
+            }
           })
         
         tentativeDishes.push(dish);
@@ -111,9 +126,18 @@ function App() {
             }
             return null;
           })
+          
+          response.data.includes.Asset.map((asset) => {
+            if(asset.sys.id === dish.pictureId) {
+              dish.pictureURL = asset.fields.file.url;
+            }
+          })
+
           tentativeDishes.push(dish);
           return null
         })
+
+
         setDishes(tentativeDishes)
       })
       .catch((err) => console.error(err));
@@ -145,6 +169,13 @@ function App() {
             }
             return null;
           })
+
+          response.data.includes.Asset.map((asset) => {
+            if(asset.sys.id === dish.pictureId) {
+              dish.pictureURL = asset.fields.file.url;
+            }
+          })
+
           tentativeDishes.push(dish);
           return null
         })
@@ -156,7 +187,7 @@ function App() {
   // useEffect(()=>{
   //   axios.get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21").then((response)=>{response.data.map((iteration)=>{image.push(iteration.urls.regular)})})
   // },[])
-    
+    console.log(dishes);
 
    if(dishes) {
      dishes.map((dish) => {
