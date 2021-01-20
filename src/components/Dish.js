@@ -1,9 +1,10 @@
-export default function Dish({ name, pic }) {
+export default function Dish({ name, description, pictureId, origin, user }) {
+
   return (
-    <div className="dishItem">
-      <img src={pic}></img>
+    <div >
       <div>
         <p>{name}</p>
+        <p>{user.username}</p>
       </div>
     </div>
   );
