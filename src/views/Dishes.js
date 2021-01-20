@@ -11,10 +11,9 @@ export default function Dishes({ dishesCollection }) {
             key={index}
             name={dish.name}
             description={dish.description}
-            pictureId={dish.pictureId}
+            pictureURL={dish.pictureURL}
             origin={dish.origin}
             user={dish.user}
-
           />
       ))}
     </div>
