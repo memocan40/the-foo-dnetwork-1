@@ -1,7 +1,9 @@
 import Dish from "../components/Dish";
 
+
 export default function Dishes({ dishesCollection }) {
   
+
   return (
     <div className="collection">
       {dishesCollection.map((dish, index) => (
@@ -12,6 +14,7 @@ export default function Dishes({ dishesCollection }) {
             pictureId={dish.pictureId}
             origin={dish.origin}
             user={dish.user}
+
           />
       ))}
     </div>

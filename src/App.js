@@ -13,8 +13,6 @@ function App() {
   let [dishes, setDishes] = useState([]);
   let [query, setQuery] = useState("");
 
-
-
   //Here GET dishes that match the search (query)
   useEffect(() => {
     const baseURL =
@@ -184,11 +182,6 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
-  // useEffect(()=>{
-  //   axios.get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21").then((response)=>{response.data.map((iteration)=>{image.push(iteration.urls.regular)})})
-  // },[])
-    console.log(dishes);
-
    if(dishes) {
      dishes.map((dish) => {
        if (!origins.includes(dish.origin)) setOrigins([...origins, dish.origin]);
@@ -205,7 +198,7 @@ function App() {
         origins={origins} 
         users={users} 
       />
-      {dishes ? <Dishes dishesCollection={dishes} /> : null}
+      {dishes ? <Dishes dishesCollection={dishes} images={images}/> : null}
     </div>
   );
 }
