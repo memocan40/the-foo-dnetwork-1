@@ -12,7 +12,7 @@ function App() {
   let [origin, setOrigin] = useState("");
   let [dishes, setDishes] = useState();
   let [query, setQuery] = useState("");
-  let [image,setimage] = useState([]);
+  let [images, setImages] = useState([]);
 
 
   //Here GET dishes that match the search (query)
@@ -72,16 +72,24 @@ function App() {
   }, []);
 
   useEffect(()=>{
-    axios.get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21").then((response)=>{response.data.map((iteration)=>{image.push(iteration.urls.regular)})})
+    axios
+    .get("https://api.unsplash.com/photos/?client_id=4J0aQFt0da187Dy7vGsol1xFdpG37WzNgwEDrrj6skc&query=food&per_page=21")
+    .then((response)=>{
+      response.data.map((resImage)=>{
+        // setImages([...images, resImage.urls.regular])
+        images.push(resImage.urls.regular);
+      })
+    })
+    .catch(err => console.error(err))
   },[])
     
-
    if(dishes) {
      dishes.map((dish) => {
        if (!origins.includes(dish.fields.origin)) setOrigins([...origins, dish.fields.origin]);
        return null;
      })
    }
+
    
   return (
     <div className="wrapper">
@@ -92,7 +100,7 @@ function App() {
         origins={origins} 
         users={users} 
       />
-      {dishes ? <Dishes dishesCollection={dishes} /> : null}
+      {dishes ? <Dishes dishesCollection={dishes} images={images}/> : null}
     </div>
   );
 }
