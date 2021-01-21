@@ -1,7 +1,7 @@
 import Search from "../components/Search";
 import Origin from "../components/Origin";
 
-const Nav = ({ changeQuery, changeOrigin, origins, users, changeUser }) => {
+const Nav = ({ changeQuery, changeOrigin, origins, users, changeUser, allDishesHandler }) => {
   return (
     <div className="sideBar">
       <div className="logo">
@@ -13,6 +13,7 @@ const Nav = ({ changeQuery, changeOrigin, origins, users, changeUser }) => {
         origins={origins}
         users={users}
         changeUser={changeUser}
+        allDishesHandler={allDishesHandler}
       />
       {/* <div className="intro">
         <p>

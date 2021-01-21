@@ -3,8 +3,9 @@ const Origin = ({
   origins,
   users,
   changeUser,
-  allDishesHandler,
+  allDishesHandler
 }) => {
+
   const handleOriginClick = (e) => {
     e.preventDefault();
     changeOrigin(e.target.innerText);
@@ -16,7 +17,7 @@ const Origin = ({
 
   return (
     <div className="origins">
-      <h2 onclick={allDishesHandler}>All Dishes</h2>
+      <a onClick={allDishesHandler} className="allDishes">All Dishes</a>
       <h2>Dishes from:</h2>
       <ul>
         {origins

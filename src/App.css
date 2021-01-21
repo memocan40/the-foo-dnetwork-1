@@ -156,11 +156,16 @@ html {
   min-height: 50%;
 }
 
-.sideBar h2 {
+.sideBar h2,
+.allDishes {
   font-family: "Fjalla One", sans-serif;
   font-size: 1.3rem;
   text-transform: uppercase;
   margin-top: 10%;
+}
+
+.allDishes {
+  cursor: pointer !important;
 }
 
 form {
@@ -181,7 +186,7 @@ li a {
   margin=top: 3%;
 }
 
-.sideBar h2:nth-of-type(1):hover,
+.sideBar a:hover,
 li a:hover,
 .close:hover {
   color: var(--color);
