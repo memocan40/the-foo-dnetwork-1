@@ -15,6 +15,7 @@ function App() {
 
   const updateDishes = (response) => {
     const tentativeDishes = [];
+    
         response.data.items.map((item) => {
           const dish = {
             name: item.fields.dishName,
@@ -23,7 +24,7 @@ function App() {
             user: {id: item.fields.author.sys.id},
             pictureId: item.fields.picture.sys.id
           }
-           
+
           response.data.includes.Entry.map((item) => {
             if (item.sys.id === dish.user.id) {
               dish.user.name = item.fields.name;
@@ -34,10 +35,10 @@ function App() {
           })
 
           response.data.includes.Asset.map((asset) => {
-            if(asset.sys.id === dish.pictureId) {
+            if (asset.sys.id === dish.pictureId) {
               dish.pictureURL = asset.fields.file.url;
             }
-          })
+          });
 
           tentativeDishes.push(dish);
           return null
@@ -55,27 +56,27 @@ function App() {
       .then(response => updateDishes(response))
       .catch((err) => console.error(err));
   }, [query]);
-  
+
   // //Here GET dished from a specific user
   useEffect(() => {
     const baseURL =
-    "https://cdn.contentful.com//spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.author.sys.contentType.sys.id=user&fields.author.sys.id=";
-    
+      "https://cdn.contentful.com//spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.author.sys.contentType.sys.id=user&fields.author.sys.id=";
+
     axios
     .get(baseURL + user)
     .then(response => updateDishes(response))
     .catch((err) => console.error(err));
   }, [user]);
-  
+
   //Here GET dishes from a specific origin
-  
+
   useEffect(() => {
     const baseURL =
-    "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.origin[match]=";
+      "https://cdn.contentful.com/spaces/ngczliqhmrc5/environments/master/entries?access_token=47FZlMTfDlGKzrXJnRUXR5t1DP70hkaQVUfjt0BO-lI&content_type=dish&fields.origin[match]=";
     axios
     .get(baseURL + origin)
     .then(response => updateDishes(response))
-      .catch((err) => console.error(err));
+    .catch((err) => console.error(err));
   }, [origin]);
 
   //Here GET all the dishes (API call) - (UseEffect)
@@ -97,15 +98,18 @@ function App() {
        return null;
      })
    }
-   console.log("users", users)
+
   return (
     <div className="wrapper">
-      <Nav 
-        changeQuery={(query) => setQuery(query)} 
-        changeOrigin={(origin) => {setOrigin(origin)}} 
+      <Nav
+        changeQuery={(query) => setQuery(query)}
+        changeOrigin={(origin) => {
+          setOrigin(origin);
+        }}
         changeUser={(user) => setUser(user)}
-        origins={origins} 
-        users={users} 
+        origins={origins}
+        users={users}
+        // allDishesHandler={getAllDishes}
       />
       {dishes ? <Dishes dishesCollection={dishes} /> : null}
     </div>

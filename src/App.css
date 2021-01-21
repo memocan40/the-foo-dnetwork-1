@@ -109,7 +109,10 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 ol,
 ul {
@@ -135,11 +138,6 @@ html {
   font-size: 1vmax;
 }
 
-body {
-  /* font-size: 1rem; */
-  line-height: 1.3;
-}
-
 .App {
 }
 
@@ -155,7 +153,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 40%;
+  min-height: 50%;
+}
+
+.sideBar h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-top: 10%;
+}
+
+form {
+  margin: 40% 0 12% 0;
+}
+
+ul {
+  margin-bottom: 3%;
 }
 
 li {
@@ -168,8 +181,14 @@ li a {
   margin=top: 3%;
 }
 
-li a:hover {
+.sideBar h2:nth-of-type(1):hover,
+li a:hover,
+.close:hover {
   color: var(--color);
+}
+
+.intro {
+  width: 20%;
 }
 
 .collection {
@@ -220,15 +239,18 @@ li a:hover {
   top: 0%;
   left: 30%;
   z-index: 20;
-  width: 100%;
+  width: 60%;
   height: 100%;
   background: white;
   padding-top: 1.5%;
+  padding-left: 10%;
 }
 
 .info-selected h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
   color: var(--color);
-  font-size: 1.3rem;
   /* text-align: center; */
   margin-bottom: 1%;
   line-height: 1;
@@ -236,7 +258,7 @@ li a:hover {
 
 .info-selected h5 {
   margin-bottom: 0.5%;
-  line-height: 1;
+  font-size: 1rem;
 }
 
 .info-selected h4 {
@@ -245,12 +267,28 @@ li a:hover {
   color: gray;
 }
 
-.info p,
-.info-selected p {
+.info p {
   text-align: left;
   margin-bottom: 4.5%;
 }
 
+.info-selected p {
+  text-align: left;
+  margin-bottom: 4.5%;
+  padding-right: 25%;
+}
+
+.imageContainer img {
+  min-width: 45%;
+  max-width: 75%;
+}
+.close {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 3% -3% 0;
+  text-align: right;
+}
 .extra {
   position: absolute;
   bottom: 4%;
@@ -266,11 +304,12 @@ li a:hover {
 
 .logo {
   font-size: 3.5rem;
+  font-family: "Fjalla One", sans-serif;
+  text-align: right;
 }
 
 .origins {
   border-top: solid 1px;
-  padding-top: 4%;
 }
 
 form {
