@@ -175,7 +175,6 @@ li a:hover {
 .collection {
   column-count: 3;
   max-width: 70%;
-  height: 250vh;
 }
 
 .dishItem {
