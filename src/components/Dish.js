@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 export default function Dish({ name, description, origin, pictureURL, user }) {
@@ -21,19 +20,30 @@ export default function Dish({ name, description, origin, pictureURL, user }) {
         <div className="hoverPanel">
           <p>{name}</p>
           <div className="extra">
-            <p> by {user.name} {user.surname}</p>
+            <p>
+              {" "}
+              by {user.name} {user.surname}
+            </p>
             <p onClick={handleInfo}> {readMore} </p>
           </div>
         </div>
       </div>
 
       <div className={clickClass}>
-        <p onClick={handleInfo}>Close</p>
-        <img src={pictureURL}/>
+        <div className="close" onClick={handleInfo}>
+          Close
+        </div>
         <h5>–{origin}</h5>
         <h2>{name}</h2>
-        <h4> by {user.name} {user.surname}</h4>
+        <h4>
+          {" "}
+          by {user.name} {user.surname}
+        </h4>
         <p>{description} </p>
+
+        <div className="imageContainer">
+          <img src={pictureURL} />
+        </div>
       </div>
     </>
   );
