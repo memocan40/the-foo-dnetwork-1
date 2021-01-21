@@ -156,15 +156,14 @@ html {
   min-height: 50%;
 }
 
-.sideBar h2,
-.allDishes {
+.sideBar h2 {
   font-family: "Fjalla One", sans-serif;
   font-size: 1.3rem;
   text-transform: uppercase;
   margin-top: 10%;
 }
 
-.allDishes {
+.pointer {
   cursor: pointer !important;
 }
 
@@ -186,7 +185,7 @@ li a {
   margin=top: 3%;
 }
 
-.sideBar a:hover,
+.sideBar h2:nth-of-type(1):hover,
 li a:hover,
 .close:hover {
   color: var(--color);
@@ -227,6 +226,20 @@ li a:hover,
 
 .hoverPanel:hover {
   opacity: 1;
+}
+.hoverPanel h3 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.extra p:nth-of-type(1) {
+  color: white;
+  font-weight: 500;
+}
+
+.extra p:nth-of-type(2) {
+  font-size: 0.9rem;
 }
 
 .info {
@@ -284,8 +297,9 @@ li a:hover,
 }
 
 .imageContainer img {
-  min-width: 45%;
+  min-width: 60%;
   max-width: 75%;
+  max-height: 1000px;
 }
 .close {
   font-family: "Fjalla One", sans-serif;
@@ -293,6 +307,7 @@ li a:hover,
   text-transform: uppercase;
   margin: 0 3% -3% 0;
   text-align: right;
+  cursor: pointer !important;
 }
 .extra {
   position: absolute;

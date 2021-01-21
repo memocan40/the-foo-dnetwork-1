@@ -18,13 +18,16 @@ export default function Dish({ name, description, origin, pictureURL, user }) {
       <div className="dishItem">
         <img src={pictureURL} />
         <div className="hoverPanel">
-          <p>{name}</p>
+          <h3>{name}</h3>
           <div className="extra">
             <p>
               {" "}
               by {user.name} {user.surname}
             </p>
-            <p onClick={handleInfo}> {readMore} </p>
+            <p onClick={handleInfo} className="pointer">
+              {" "}
+              {readMore}{" "}
+            </p>
           </div>
         </div>
       </div>
