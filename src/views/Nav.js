@@ -3,6 +3,7 @@ import Origin from "../components/Origin";
 
 
 const Nav = ({changeQuery, changeOrigin, origins, users, changeUser}) => {
+  console.log(origins)
     return (
     <div className="sideBar">
       <div className="logo">
