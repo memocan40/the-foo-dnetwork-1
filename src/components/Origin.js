@@ -3,9 +3,8 @@ const Origin = ({
   origins,
   users,
   changeUser,
-  allDishesHandler
+  allDishesHandler,
 }) => {
-
   const handleOriginClick = (e) => {
     e.preventDefault();
     changeOrigin(e.target.innerText);
@@ -17,8 +16,11 @@ const Origin = ({
 
   return (
     <div className="origins">
-      <a onClick={allDishesHandler} className="allDishes">All Dishes</a>
-      <h2>Dishes from:</h2>
+      {/* <a onClick={allDishesHandler} className="allDishes">All Dishes</a> */}
+      <h2 onClick={allDishesHandler} className="pointer">
+        All Dishes
+      </h2>
+      <h2>By Provenance</h2>
       <ul>
         {origins
           ? origins.map((origin, index) => {
@@ -32,7 +34,7 @@ const Origin = ({
             })
           : null}
       </ul>
-      <h2>Posted by:</h2>
+      <h2>By Writer</h2>
       <ul>
         {users
           ? users.map((user, index) => {
