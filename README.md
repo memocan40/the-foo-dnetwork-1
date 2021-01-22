@@ -41,7 +41,15 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
   - Open an Unsplash account
   
 
-**The application has:**
+**The application enables to:**
+
+- See all dishes.
+- Search dishes by country.
+- Search dishes by user.
+- Read More about the description
+- Hover over each dish to view more info. 
+
+**The application uses:**
 
  - 3 Components: 
    * Nav 
@@ -55,11 +63,12 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
   * Dishes
   * Nav
   
-  
  <img width="280" alt="Dish" src="https://user-images.githubusercontent.com/74352389/105481308-28477e80-5ca7-11eb-859b-242f913c6ad5.png">
 
 - App.js: 
   * Contains most of the State Variables and Axios calls 
+  
+  * Methods used: map(), .push(), Date.now(); // & event handlers. 
   
 #### Wireframe
 
