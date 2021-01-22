@@ -13,6 +13,8 @@ function App() {
   let [dishes, setDishes] = useState([]);
   let [query, setQuery] = useState("");
   let [fetchAllDishes, setFetchAllDishes] = useState(Date.now());
+  let [dishesCount, setDishesCount] = useState(0);
+
 
   const updateDishes = (response) => {
     const tentativeDishes = [];
@@ -92,6 +94,7 @@ function App() {
         setUsers(response.data.includes.Entry);
       })
       .catch((err) => console.error(err));
+      setDishesCount(dishes.length)
   }, [fetchAllDishes]);
 
    if(dishes) {
@@ -110,6 +113,7 @@ function App() {
         allDishesHandler={(e) => {e.preventDefault(); setFetchAllDishes(Date.now())}}
         origins={origins} 
         users={users} 
+        dishesCount={dishesCount}
       />
       {dishes.length ? <Dishes dishesCollection={dishes} /> : <h2 id="noDishes">Sorry, no dishes for you!!  😬</h2>}
     </div>
