@@ -56,9 +56,9 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
   
 #### Design
 
-[The_Food_Network_screenview_1]((https://user-images.githubusercontent.com/74352389/105479776-2bda0600-5ca5-11eb-9af4-f5bbf1a253f1.png)
+[The_Food_Network/wireframe_1](https://user-images.githubusercontent.com/74352389/105479776-2bda0600-5ca5-11eb-9af4-f5bbf1a253f1.png)
 
-[The_Food_Network_screenview_2](https://user-images.githubusercontent.com/74352389/105479791-2f6d8d00-5ca5-11eb-9e41-0dbe37e9c1ff.png)
+[The_Food_Network/wireframe_2](https://user-images.githubusercontent.com/74352389/105479791-2f6d8d00-5ca5-11eb-9e41-0dbe37e9c1ff.png)
 
 
 #### Resources
