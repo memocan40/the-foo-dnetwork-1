@@ -11,7 +11,7 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
 - [Objectives](#Objectives)
 - [Project Requirements](#Project-Requirements)
 - [Workflow](#Workflow)
-- [Design](#design)
+- [Wireframe](#wireframe)
 - [Resources](#Resources)
 
 
@@ -61,7 +61,7 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
 - App.js: 
   * Contains most of the State Variables and Axios calls 
   
-#### Design
+#### Wireframe
 
 [The_Food_Network/wireframe_1](https://user-images.githubusercontent.com/74352389/105479776-2bda0600-5ca5-11eb-9af4-f5bbf1a253f1.png)
 
