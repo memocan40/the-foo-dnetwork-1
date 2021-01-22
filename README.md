@@ -1,5 +1,6 @@
 
-# The Food_d Network 
+![Logo_The Foo_d_network](https://user-images.githubusercontent.com/74352389/105480608-3fd23780-5ca6-11eb-8ccd-717845494bd9.png)
+
 ## React app with CMS - using Contentful 
 Team Project w/ Avril, Diego, Mehmet and Montaser. 
 
@@ -46,10 +47,16 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
    * Nav 
    * Origin
    * Search
- 
+   
+   <img width="203" alt="NAv_Bar" src="https://user-images.githubusercontent.com/74352389/105481538-7f4d5380-5ca7-11eb-8ebb-a3b2acdd7f1b.png">
+
+
 - 2 Views: 
   * Dishes
   * Nav
+  
+  
+ <img width="280" alt="Dish" src="https://user-images.githubusercontent.com/74352389/105481308-28477e80-5ca7-11eb-859b-242f913c6ad5.png">
 
 - App.js: 
   * Contains most of the State Variables and Axios calls 
