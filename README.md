@@ -56,7 +56,7 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
   
 #### Design
 
-* [Wireframe]()
+* [Wireframe](https://github.com/AvrilAvril/the-foo-dnetwork/issues/19#issue-791886940)
 
 #### Resources
 - [Content Management API ](https://www.contentful.com/developers/docs/references/content-management-api/)
