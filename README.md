@@ -2,7 +2,7 @@
 ![Logo_The Foo_d_network](https://user-images.githubusercontent.com/74352389/105480608-3fd23780-5ca6-11eb-8ccd-717845494bd9.png)
 
 ## React app with CMS - using Contentful 
-Team Project w/ Avril, Diego, Mehmet and Montaser. 
+Team Project in alphabetical order: [Avril], [Diego](https://github.com/diegog999), [Mehmet](https://github.com/memocan40) and [Montaser](https://github.com/monoamro). 
 
 ### Table of Contents 
 
@@ -46,8 +46,8 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
 - See all dishes.
 - Search dishes by country.
 - Search dishes by user.
-- Read More about the description
-- Hover over each dish to view more info. 
+- Read More link to read about the description of the dish.
+- Hover over each post to view detailed info about each dish. 
 
 **The application uses:**
 
