@@ -156,12 +156,17 @@ html {
   min-height: 50%;
 }
 
-.sideBar h2 {
+.sideBar h2,
+#noDishes {
   font-family: "Fjalla One", sans-serif;
   font-size: 1.3rem;
   text-transform: uppercase;
   margin-top: 10%;
 }
+
+/* #noDishes {
+  align-self: flex-start;
+} */
 
 .pointer {
   cursor: pointer !important;

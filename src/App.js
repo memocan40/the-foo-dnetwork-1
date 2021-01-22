@@ -111,7 +111,7 @@ function App() {
         origins={origins} 
         users={users} 
       />
-      {dishes ? <Dishes dishesCollection={dishes} /> : null}
+      {dishes.length ? <Dishes dishesCollection={dishes} /> : <h2 id="noDishes">Sorry, no dishes for you!!  😬</h2>}
     </div>
   );
 }
