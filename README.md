@@ -84,6 +84,7 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
 - [Retreive an Image](https://www.contentful.com/developers/docs/references/images-api/#/reference/retrieval/image/retrieve-an-image/console)
 - [Unsplash](https://unsplash.com/developers)
 - [Postman](https://www.postman.com/)
+- [React Router](https://reactrouter.com/web/example/url-params)
 - [How a Goggler resolves coding problems](https://blog.usejournal.com/how-a-googler-solves-coding-problems-ec5d59e73ec5)
 
 
