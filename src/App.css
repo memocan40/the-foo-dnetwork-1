@@ -154,6 +154,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   min-height: 50%;
+  /* max-width: 110px; */
 }
 
 .sideBar h2,
@@ -164,9 +165,10 @@ html {
   margin-top: 10%;
 }
 
-/* #noDishes {
-  align-self: flex-start;
-} */
+#noDishes {
+  margin-right: 50%;
+  margin-top: 17.5%;
+}
 
 .pointer {
   cursor: pointer !important;
@@ -356,3 +358,9 @@ form {
 .bttn:hover {
   background-color: var(--color);
 }
+
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .origins {
+    max-width: 100px !important;
+  }
+} */
