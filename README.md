@@ -1,3 +1,80 @@
+
+# The Food_d Network 
+## React app with CMS - using Contentful 
+Team Project w/ Avril, Diego, Mehmet and Montaser. 
+
+### Table of Contents 
+
+
+- [Description](#Description)
+- [Objectives](#Objectives)
+- [Project Requirements](#Project-Requirements)
+- [Workflow](#Workflow)
+- [Design](#design)
+- [Resources](#Resources)
+
+
+#### Description
+- [What is a Content Management System and How Does it Work?](https://www.bloomreach.com/en/blog/2019/08/content-management-system.html) 
+
+
+#### Objectives
+
+* Create a React App, using the CMS to build data/endpoints and allow a react app to fetch this data as well as filter it out depending on several criterias.  Create at least two different routes one for 'All Posts/Dishes' the second one for 'Origin' and 'Users'. Using Contentful types for users, each team member should create 4 entries in order to create posts. 
+* Timeline: 11.Jan - 22.Jan.2021 (2 weeks-project)
+
+#### Project Requirements
+
+- Initiate a Repo on Github and set-up collaborators. [We recomend to follow this guide.](https://github.com/Elie-Soued/TodoList_React/blob/main/doc/git.md)
+- Initiate/Create a new a React Project. The installations requires [Node.js](https://nodejs.org/en/) for further info:  [Follow the steps.](https://reactjs.org/docs/create-a-new-react-app.html)
+- CSS, HTML, JS, JSX, API and REACT knowledge. 
+- Applications to be used: [Postman](https://www.postman.com/) 
+- Unsplash
+
+#### Workflow 
+
+  - Create a Wire Frame and a Mockup. 
+  - Define the Architechture of the App (as a team) 
+  - Delegate tasks
+  - Install and import:  BrowserRouter, React-router-dom, Axios, useEffect, useState in App.js
+  - Open an Unsplash account
+  
+
+**The application has:**
+
+ - 3 Components: 
+   * Nav 
+   * Origin
+   * Search
+ 
+- 2 Views: 
+  * Dishes
+  * Nav
+
+- App.js: 
+  * Contains most of the State Variables and Axios calls 
+  
+#### Design
+
+* [Wireframe]()
+
+#### Resources
+- [Content Management API ](https://www.contentful.com/developers/docs/references/content-management-api/)
+- [Search Parameters](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/ranges)
+- [Content Types](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types)
+- [Retreive an Image](https://www.contentful.com/developers/docs/references/images-api/#/reference/retrieval/image/retrieve-an-image/console)
+- [Unsplash](https://unsplash.com/developers)
+- [Postman](https://www.postman.com/)
+- [How a Goggler resolves coding problems](https://blog.usejournal.com/how-a-googler-solves-coding-problems-ec5d59e73ec5)
+
+
+
+
+
+####
+-------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
