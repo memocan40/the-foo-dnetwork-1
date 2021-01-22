@@ -26,7 +26,7 @@ Team Project w/ Avril, Diego, Mehmet and Montaser.
 #### Project Requirements
 
 - Initiate a Repo on Github and set-up collaborators. [We recomend to follow this guide.](https://github.com/Elie-Soued/TodoList_React/blob/main/doc/git.md)
-- Initiate/Create a new a React Project. The installations requires [Node.js](https://nodejs.org/en/) for further info:  [Follow the steps.](https://reactjs.org/docs/create-a-new-react-app.html)
+- Initiate/Create a new a React Project. The installations requires [Node.js](https://nodejs.org/en/) for further info:  [Follow the steps.](https://reactjs.org/docs/create-a-new-react-app.html) more info [below](https://github.com/AvrilAvril/the-foo-dnetwork/blob/main/README.md#getting-started-with-create-react-app)
 - CSS, HTML, JS, JSX, API and REACT knowledge. 
 - Applications to be used: [Postman](https://www.postman.com/) 
 - Unsplash
