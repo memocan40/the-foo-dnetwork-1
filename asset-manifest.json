@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/the-foo-dnetwork/static/css/main.105da240.chunk.css",
-    "main.js": "/the-foo-dnetwork/static/js/main.31a35837.chunk.js",
-    "main.js.map": "/the-foo-dnetwork/static/js/main.31a35837.chunk.js.map",
+    "main.css": "/the-foo-dnetwork/static/css/main.7b209b57.chunk.css",
+    "main.js": "/the-foo-dnetwork/static/js/main.c6030f48.chunk.js",
+    "main.js.map": "/the-foo-dnetwork/static/js/main.c6030f48.chunk.js.map",
     "runtime-main.js": "/the-foo-dnetwork/static/js/runtime-main.133804fd.js",
     "runtime-main.js.map": "/the-foo-dnetwork/static/js/runtime-main.133804fd.js.map",
     "static/js/2.b1e8fcb8.chunk.js": "/the-foo-dnetwork/static/js/2.b1e8fcb8.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.96c56b57.chunk.js": "/the-foo-dnetwork/static/js/3.96c56b57.chunk.js",
     "static/js/3.96c56b57.chunk.js.map": "/the-foo-dnetwork/static/js/3.96c56b57.chunk.js.map",
     "index.html": "/the-foo-dnetwork/index.html",
-    "static/css/main.105da240.chunk.css.map": "/the-foo-dnetwork/static/css/main.105da240.chunk.css.map",
+    "static/css/main.7b209b57.chunk.css.map": "/the-foo-dnetwork/static/css/main.7b209b57.chunk.css.map",
     "static/js/2.b1e8fcb8.chunk.js.LICENSE.txt": "/the-foo-dnetwork/static/js/2.b1e8fcb8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.133804fd.js",
     "static/js/2.b1e8fcb8.chunk.js",
-    "static/css/main.105da240.chunk.css",
-    "static/js/main.31a35837.chunk.js"
+    "static/css/main.7b209b57.chunk.css",
+    "static/js/main.c6030f48.chunk.js"
   ]
 }
