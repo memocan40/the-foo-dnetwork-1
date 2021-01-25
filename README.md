@@ -23,6 +23,7 @@ Team Project in alphabetical order: Avril, [Diego](https://github.com/diegog999)
 
 * Create a React App, using the CMS to build data/endpoints and allow a react app to fetch this data as well as filter it out depending on several criterias.  Create at least two different routes one for 'All Posts/Dishes' the second one for 'Origin' and 'Users'. Using Contentful types for users, each team member should create 4 entries in order to create posts. 
 * Timeline: 11.Jan - 22.Jan.2021 (2 weeks-project)
+* [The Foo_d Network App](https://avrilavril.github.io/the-foo-dnetwork/)
 
 #### Project Requirements
 
