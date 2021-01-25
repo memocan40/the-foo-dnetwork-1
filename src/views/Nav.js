@@ -1,13 +1,25 @@
 import Search from "../components/Search";
 import Origin from "../components/Origin";
 
-const Nav = ({ changeQuery, changeOrigin, origins, users, changeUser, allDishesHandler, dishesCount }) => {
+const Nav = ({
+  changeQuery,
+  changeOrigin,
+  origins,
+  users,
+  changeUser,
+  allDishesHandler,
+  dishesCount,
+}) => {
   return (
     <div className="sideBar">
       <div className="logo">
         THE FOO___D <br></br> NETWORK
       </div>
-      <p id="openStatement">We have{dishesCount ? ` ${dishesCount}` : ""} dishes from {origins.length} cultures, and by {users.length} food enthusiasts</p>
+      <p id="openStatement">
+        We have <span> {dishesCount ? ` ${dishesCount}` : ""} </span> dishes
+        from <span> {origins.length} </span> cultures, and by{" "}
+        <span> {users.length}</span> food enthusiasts.
+      </p>
       <Search changeQuery={changeQuery} />
       <Origin
         changeOrigin={changeOrigin}

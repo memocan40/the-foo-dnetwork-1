@@ -169,6 +169,10 @@ html {
   margin-right: 50%;
   margin-top: 17.5%;
 }
+span {
+  font-weight: 500;
+  color: var(--color);
+}
 
 .pointer {
   cursor: pointer !important;
