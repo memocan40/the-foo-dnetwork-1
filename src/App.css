@@ -154,7 +154,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   min-height: 50%;
-  /* max-width: 110px; */
+  max-width: 26%;
 }
 
 .sideBar h2,
@@ -175,7 +175,7 @@ html {
 }
 
 form {
-  margin: 40% 0 12% 0;
+  margin: 20% 0 12% 0;
 }
 
 ul {
@@ -335,8 +335,15 @@ li a:hover,
   text-align: right;
 }
 
+#openStatement {
+  max-width: 90%;
+  margin-top: 5%;
+}
+
 .origins {
   border-top: solid 1px;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 form {
